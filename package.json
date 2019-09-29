@@ -1,0 +1,26 @@
+{
+  "name": "commonback",
+  "version": "0.1.0",
+  "description": "CommonBack end",
+  "main": "index.js",
+  "scripts": {
+    "test": "start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/mystikxkemix/Common-backend.git"
+  },
+  "keywords": [
+    "Node",
+    "API"
+  ],
+  "author": "Mike OLIVA",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mystikxkemix/Common-backend/issues"
+  },
+  "homepage": "https://github.com/mystikxkemix/Common-backend#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
