@@ -2,9 +2,10 @@
   "name": "commonback",
   "version": "0.1.0",
   "description": "CommonBack end",
-  "main": "index.js",
+  "main": "main.js",
   "scripts": {
-    "test": "start"
+    "start": "node main.js",
+    "test": "nodemon main.js"
   },
   "repository": {
     "type": "git",
@@ -21,6 +22,10 @@
   },
   "homepage": "https://github.com/mystikxkemix/Common-backend#readme",
   "dependencies": {
+    "chalk": "^2.4.2",
     "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.3"
   }
 }
