@@ -1,18 +1,30 @@
-const chalk = require('chalk')
+const chalk = require('chalk');
+
+const bm = function(message, context, _chalk){
+    context = context || 'Common-API';
+
+    var date = new Date();
+
+    var msg = '[' + Date.now() + '] - ';
+    msg += `[${context}]:\n${message}`;
+    msg +=  '\n-------------------------------------\n';
+
+    return _chalk(msg);
+};
 
 const logger = {
     debug: function(message, context){
-        console.log(chalk.blue(`[${context}]: ${message}`));
+        console.log(bm(message, context, chalk.greenBright));
     },
     error: function(message, context){
-        console.log(chalk.white.bgRed.bold(`[${context}]: ${message}`));
+        console.log(bm(message, context, chalk.white.bgRed.bold));
     },
     warning: function(message, context){
-        console.log(chalk.blue(`[${context}]: ${message}`));
+        console.log(bm(message, context, chalk.yellow));
     },
     info: function(message, context){
-        console.log(chalk.gray(`[${context}]: ${message}`));
-    },
+        console.log(bm(message, context, chalk.blueBright));
+    }
 }
 
 module.exports = {
