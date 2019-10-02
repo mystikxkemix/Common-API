@@ -1,7 +1,7 @@
 {
-  "name": "commonback",
-  "version": "0.1.0",
-  "description": "CommonBack end",
+  "name": "commonapi",
+  "version": "0.0.1",
+  "description": "Common API tool",
   "main": "main.js",
   "scripts": {
     "start": "node main.js",
@@ -15,7 +15,7 @@
     "Node",
     "API"
   ],
-  "author": "Mike OLIVA",
+  "author": "Mike",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/mystikxkemix/Common-backend/issues"
