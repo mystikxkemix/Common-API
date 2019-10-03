@@ -23,7 +23,7 @@ var builder = {
                 }
 
                 for(var i = 0; i < routeArray.length; i++){
-                    logger.debug('Set routers ' + (i+1) + ' for \nmethod: ' + method + '\nroute: '+ route);
+                    logger.debug('Set routers ' + (i+1) + ' for \n> method: ' + method + '\n> route: '+ route);
                     app[method](route, routeArray[i]);
                 }
             }
