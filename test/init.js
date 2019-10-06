@@ -14,10 +14,10 @@ var preRouters = {
 
 var routes = {
     'all': {
-        '/': function(req, res){
+        '/': function(req, res, next){
             console.log('route :');
             console.log(req);
-            return Promise.reject();
+            next();
         }
     }
 };
@@ -47,6 +47,6 @@ var wrapper = function(req, res, next, route){
 commonapi.setPreRouters(preRouters);
 commonapi.setRoutes(routes);
 commonapi.setPostRouters(postRouters);
-commonapi.setRouteWrapper(wrapper);
+// commonapi.setRouteWrapper(wrapper);
 commonapi.setPort(3000);
 commonapi.start();
