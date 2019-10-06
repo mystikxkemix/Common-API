@@ -47,6 +47,12 @@ var commonback = {
         logger.debug(`Set listening port on ${port}`);
     },
 
+    setRouteWrapper: function(wrapper){
+        if(!this['config']) this.config = {};
+        this.config.wrapper = wrapper;
+        logger.debug('Set Route Wrapper: \n' + this.config.wrapper);
+    },
+
     setLogLevel: function(level){
         if(!this['config']) this.config = {};
         this.config.logLevel = logLevel;
@@ -89,12 +95,16 @@ module.exports = {
         commonback.setPort(port);
     },
 
+    setRouteWrapper: function(wrapper){
+        commonback.setRouteWrapper(wrapper);
+    },
+
     setLogLevel: function(level){
         commonback.setLogLevel(level);
     },
 
     start: function(){
         commonback.build();
-        // commonback.start();
+        commonback.start();
     }
 }

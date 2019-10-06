@@ -15,7 +15,9 @@ var preRouters = {
 var routes = {
     'all': {
         '/': function(req, res){
-            console.log('route : \n' + JSON.stringify(req, null, 4));
+            console.log('route :');
+            console.log(req);
+            return Promise.reject();
         }
     }
 };
@@ -30,10 +32,21 @@ var postRouters = {
     }
 };
 
-console.log(preRouters);
+var wrapper = function(req, res, next, route){
+    route(req, res)
+        .then(function(result){
+            console.log('Success : ' + result);
+            next();
+        })
+        .catch(function(err){
+            console.log(err);
+            next();
+        });
+}
 
 commonapi.setPreRouters(preRouters);
 commonapi.setRoutes(routes);
 commonapi.setPostRouters(postRouters);
+commonapi.setRouteWrapper(wrapper);
 commonapi.setPort(3000);
 commonapi.start();
